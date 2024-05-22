@@ -9,9 +9,17 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html' 
+      template: './src/index.html'
     })
   ]
 };
